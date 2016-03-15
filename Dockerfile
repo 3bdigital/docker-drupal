@@ -1,7 +1,7 @@
 FROM drupal:7-fpm
 
 # memcache & redis
-RUN yes | pecl install redis memcache \
+RUN yes | pecl install redis memcache-3.0.8 \
 	&& echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini \
 	&& echo "extension=memcache.so" > /usr/local/etc/php/conf.d/memcache.ini
 
