@@ -1,6 +1,8 @@
 #!/bin/bash
 
-mkdir -p /var/www/html/sites/default/files
-chown -R www-data:www-data /var/www/html/sites/default/files
+: ${DRUPAL_SITE_ROOT=/var/www/html}
+
+mkdir -p "$DRUPAL_SITE_ROOT/sites/default/files"
+chown -R www-data:www-data "$DRUPAL_SITE_ROOT/sites/default/files"
 
 exec "$@"
