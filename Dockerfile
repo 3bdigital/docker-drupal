@@ -32,6 +32,9 @@ RUN curl -O http://files.drush.org/drush.phar \
 	&& chmod +x drush.phar \
 	&& mv drush.phar /usr/local/bin/drush
 
+# drupal config for php
+COPY drupal.ini /usr/local/etc/php/conf.d/
+
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["php-fpm"]
